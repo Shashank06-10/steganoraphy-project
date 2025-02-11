@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} 
+Home
+{% endblock title %}
+
+{% block body %} 
+
+<div class="container  my-5">
+
+    
+    <div class="row my-5" style="display:flex; justify-content:center;">        
+         
+        {% comment %} image-Steganography {% endcomment %}
+        <div class="card mb-3 my-2 mx-2" style="max-width: 540px;">
+            <div class="row">
+              <div class="col-md-4" style>
+                <img src="{% static 'is-1.jpg' %}" class="img-fluid rounded-start my-2" style="height: 200px;" alt="...">
+
+            </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Image Steganography</h5>
+                    <p class="card-text">Hide secret information within images for covert communication.</p>
+                    <a href="#"  id="learnMoreBtn " onclick="document.getElementById('additionalContent').style.display = (document.getElementById('additionalContent').style.display === 'none') ? 'block' : 'none';" >Learn More</a><br>
+                    <button type="button" class="btn btn-primary mx-2 my-3" >
+                        <a href="image/enc/" style="color: white; text-decoration: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-shield-lock" viewBox="0 0 16 16">
+                                <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453a7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625a11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692a1.54 1.54 0 0 1 1.044-1.262A62.456 62.456 0 0 1 5.072.56"/>
+                                <path d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415z"/>
+                            </svg> Encrypt
+                        </a>
+                    </button>
+                    
+                     <button type="button" class="btn btn-danger mx-1 my-3">
+                        <a href="image/dec/" style="color: white; text-decoration: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+                                <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            </svg> Decryption
+                        </a>
+                    </button> 
+                    <div id="additionalContent" style="display: none;">
+                        <p>Steganography is the art of hiding one piece of information within another in such a way that it is difficult to detect or decipher. In the context of images, Image Steganography involves hiding secret data within an image while maintaining the image's visual integrity.</p>
+                        <p>With supporting text below as a natural lead-in to additional content, you can explore the fascinating world of covert communication through images.</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        {% comment %} Audio-Steganography {% endcomment %}
+        <div class="card mb-3 my-2 mx-2" style="max-width: 540px;">
+            <div class="row my-2 mx-1">
+              <div class="col-md-4" style>
+                <img src="{%static 'A1.jpg' %}" class="img-fluid rounded-start my-1" style="height: 200px;" alt="...">
+              </div>
+              <div class="col-md-8 ">
+                <div class="card-body">
+                    <h5 class="card-title">Audio Steganography</h5>
+                    <p class="card-text">Hide secret information within audio files for covert communication.</p>
+                    <a href="#" id="learnMoreBtn"onclick="document.getElementById('AadditionalContent').style.display = (document.getElementById('AadditionalContent').style.display === 'none') ? 'block' : 'none';" >
+                        Learn More</a><br>
+                    <button type="button" class="btn btn-primary mx-2 my-3" >
+                        <a href="audio/enc/" style="color: white; text-decoration: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-shield-lock" viewBox="0 0 16 16">
+                                <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453a7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625a11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692a1.54 1.54 0 0 1 1.044-1.262A62.456 62.456 0 0 1 5.072.56"/>
+                                <path d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415z"/>
+                            </svg> Encrypt
+                        </a>
+                    </button>
+                    
+                     <button type="button" class="btn btn-danger mx-1 my-3">
+                        <a href="audio/dec/" style="color: white; text-decoration: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+                                <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            </svg> Decryption
+                        </a>
+                    </button>
+                    <div id="AadditionalContent" style="display: none;">
+                        <p>Audio Steganography involves hiding secret data within audio files while maintaining the audio's integrity.</p>
+                        <p>Explore the world of covert communication through audio files with supporting text below.</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        
+        
+        {% comment %} Emoji-Steganography {% endcomment %}
+        <div class="card mb-3 my-2 mx-2" style="max-width: 540px;">
+            <div class="row">
+              <div class="col-md-4" style>
+                <img src="{% static 'e1.jpg'%}" class="img-fluid rounded-start my-2" style="height: 200px;" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Emoji Steganography</h5>
+                    <p class="card-text">Conceal secret messages using emojis for discreet communication.</p>
+                    <a href="#" id="learnMoreEmojiBtn" onclick="document.getElementById('additionalEmojiContent').style.display = (document.getElementById('additionalEmojiContent').style.display === 'none') ? 'block' : 'none';">Learn More</a><br>
+                    <button type="button" class="btn btn-primary mx-2 my-3" >
+                        <a href="emoji/enc/" style="color: white; text-decoration: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-shield-lock" viewBox="0 0 16 16">
+                                <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453a7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625a11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692a1.54 1.54 0 0 1 1.044-1.262A62.456 62.456 0 0 1 5.072.56"/>
+                                <path d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415z"/>
+                            </svg> Encrypt
+                        </a>
+                    </button>
+                    
+                     <button type="button" class="btn btn-danger mx-1 my-3">
+                        <a href="emoji/dec/" style="color: white; text-decoration: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+                                <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            </svg> Decryption
+                        </a>
+                    </button> 
+                    <div id="additionalEmojiContent" style="display: none;">
+                        <p>Emoji Steganography is a creative form of hiding confidential information within sequences of emojis, adding a layer of fun and disguise to your messages.</p>
+                        <p>Explore the intriguing world of covert communication through emojis, where each emoji carries a hidden meaning, making it challenging for others to detect or decipher your secret messages.</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        {% comment %} Morse code {% endcomment %}
+        <div class="card mb-3 my-2 mx-2" style="max-width: 540px;">
+            <div class="row">
+              <div class="col-md-4" style>
+                <img src="{% static 'm-1.jpg'%}" class="img-fluid rounded-start my-2" style="height: 200px;" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Morse Code Steganography</h5>
+                    <p class="card-text">Conceal secret messages using Morse code for discreet communication.</p>
+                    <a href="#" id="learnMoremcBtn" onclick="document.getElementById('additionalmcContent').style.display = (document.getElementById('additionalmcContent').style.display === 'none') ? 'block' : 'none';">Learn More</a><br>
+                    <button type="button" class="btn btn-primary mx-2 my-3" >
+                        <a href="morsecode/enc/" style="color: white; text-decoration: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-shield-lock" viewBox="0 0 16 16">
+                                <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453a7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625a11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692a1.54 1.54 0 0 1 1.044-1.262A62.456 62.456 0 0 1 5.072.56"/>
+                                <path d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415z"/>
+                            </svg> Encrypt
+                        </a>
+                    </button>
+                    
+                     <button type="button" class="btn btn-danger mx-1 my-3">
+                        <a href="morsecode/dec/" style="color: white; text-decoration: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+                                <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            </svg> Decryption
+                        </a>
+                    </button> 
+                    <div id="additionalmcContent" style="display: none;">
+                        <p>Morse Code Steganography is a method of hiding confidential information within sequences of dots and dashes, adding a layer of encryption to your messages.</p>
+                        <p>Explore the world of covert communication through Morse code, where each symbol carries a hidden meaning, making it challenging for others to detect or decipher your secret messages.</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        {% comment %} Video-Steganography {% endcomment %}
+        {% comment %} <div class="card mb-3 my-2 mx-2" style="max-width: 540px;">
+            <div class="row">
+              <div class="col-md-4" style>
+                <img src="{%static 'v1.jpg' %}" class="img-fluid rounded-start my-2" style="height: 200px;" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Video Steganography</h5>
+                    <p class="card-text">Conceal confidential information within videos for discreet communication.</p>
+                    <a href="#" id="learnMoreVideoBtn" 
+                    onclick="document.getElementById('additionalVideoContent').style.display = (document.getElementById('additionalVideoContent').style.display === 'none') ? 'block' : 'none';">Learn More</a><br>
+                    <button type="button" class="btn btn-primary mx-2 my-3" >
+                        <a href="audio/enc/" style="color: white; text-decoration: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-shield-lock" viewBox="0 0 16 16">
+                                <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453a7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625a11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692a1.54 1.54 0 0 1 1.044-1.262A62.456 62.456 0 0 1 5.072.56"/>
+                                <path d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415z"/>
+                            </svg> Encrypt
+                        </a>
+                    </button>
+                    
+                     <button type="button" class="btn btn-danger mx-1 my-3">
+                        <a href="audio/dec/" style="color: white; text-decoration: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+                                <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            </svg> Decryption
+                        </a>
+                    </button> 
+                    <div id="additionalVideoContent" style="display: none;">
+                        <p>Video Steganography is the technique of hiding sensitive information within video files, ensuring secure and confidential communication.</p>
+                        <p>Explore the world of covert communication through videos, where hidden data is seamlessly embedded to maintain the video's visual and auditory quality.</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div> {% endcomment %}
+    </div>
+
+    
+</div>
+
+
+
+{% endblock body %}

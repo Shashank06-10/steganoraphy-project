@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %} 
+Home
+{% endblock title %}
+
+{% block body %} 
+
+<div class="container  my-5">
+    <div class="row my-5">
+        <div class="col-md-6">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="max-width: 500px; margin: auto;">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                   
+                  <div class="carousel-item active">
+                    <img src="static/4.jpeg" class="d-block w-100 "  style="height: 400px;" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/5.jpeg" class="d-block w-100"  style="height: 400px;" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="static/6.jpeg" class="d-block w-100"  style="height: 400px;" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <br><br>
+                    <h2>Welcome to SecureEncrypt</h2>
+                    <h1  class="d-flex align-items-center ">
+                        Perform &nbsp
+                        <span class="" id="programmingText" style="color: blue;">
+
+                        </span>
+                    </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <br>
+                    <p>Protect your sensitive information with our encryption and decryption services. 
+                        Simply enter your data, choose the desired operation, and let us handle the rest.
+                    </p>
+                    <button type="button" onclick="window.location.href='SecureEncrypt/'"
+                        style="color:white; margin:10px; padding: 17px 40px; border-radius: 50px; cursor: pointer; border: 0; background-color:#1971da; box-shadow: rgb(0 0 0 / 5%) 0 0 8px; letter-spacing: 1.5px; text-transform: uppercase; font-size: 15px; transition: all 0.5s ease;"
+                        onmouseover="this.style.letterSpacing='3px'; this.style.backgroundColor='hsl(261deg 80% 48%)'; this.style.color='hsl(0, 0%, 100%)'; this.style.boxShadow='rgb(93 24 220) 0px 7px 29px 0px';"
+                        onmouseout="this.style.letterSpacing='1.5px'; this.style.backgroundColor='#1971da'; this.style.color='white'; this.style.boxShadow='rgb(0 0 0 / 5%) 0 0 8px';"
+                        onmousedown="this.style.letterSpacing='3px'; this.style.backgroundColor='hsl(261deg 80% 48%)'; this.style.color='hsl(0, 0%, 100%)'; this.style.boxShadow='rgb(93 24 220) 0px 0px 0px 0px'; this.style.transform='translateY(10px)'; this.style.transition='100ms';"
+                        onmouseup="this.style.letterSpacing='3px'; this.style.backgroundColor='hsl(261deg 80% 48%)'; this.style.color='hsl(0, 0%, 100%)'; this.style.boxShadow='rgb(93 24 220) 0px 7px 29px 0px'; this.style.transform='translateY(0)'; this.style.transition='100ms';"
+                    >
+                    
+                        Get Started
+                    </button>
+
+
+                    {% comment %} <button type="button" class="btn btn-primary mx-2 my-3" >
+                        <a href="/encrypt" style="color: white; text-decoration: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-shield-lock" viewBox="0 0 16 16">
+                                <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453a7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625a11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692a1.54 1.54 0 0 1 1.044-1.262A62.456 62.456 0 0 1 5.072.56"/>
+                                <path d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415z"/>
+                            </svg> Encrypt
+                        </a>
+                    </button> {% endcomment %}
+                    
+                    {% comment %} <button type="button" class="btn btn-danger mx-1 my-3">
+                        <a href="/decryption" style="color: white; text-decoration: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-key-fill" viewBox="0 0 16 16">
+                                <path d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2zM2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            </svg> Decryption
+                        </a>
+                    </button> {% endcomment %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const textElement = document.getElementById('programmingText');
+        const programmingLanguages = [" Encryption", " Decryption"];
+        let languageIndex = 0;
+        let index = 0;
+
+        function animateText() {
+            const currentLanguage = programmingLanguages[languageIndex];
+            if (index < currentLanguage.length) {
+                textElement.innerHTML += currentLanguage.charAt(index);
+                index++;
+                setTimeout(animateText, 100); // Adjust the delay between letters
+            } else {
+                setTimeout(disappearText, 1000); // Adjust the delay before disappearing
+            }
+        }
+
+        function disappearText() {
+            const currentLanguage = programmingLanguages[languageIndex];
+            if (index >= 0) {
+                textElement.innerHTML = currentLanguage.substring(0, index);
+                index--;
+                setTimeout(disappearText, 100); // Adjust the delay between disappearing letters
+            } else {
+                languageIndex = (languageIndex + 1) % programmingLanguages.length;
+                textElement.innerHTML = '';  // Clear the text
+                setTimeout(animateText, 1000); // Adjust the delay before re-appearing
+            }
+        }
+
+        // Start the animation
+        animateText();
+    });
+</script>
+
+{% endblock body %}

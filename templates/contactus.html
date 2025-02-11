@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %} 
+Contact us
+{% endblock title %}
+
+{% block body %}
+
+
+<!-- Contact Section -->
+<section class="container my-5" style=" align-item:center;">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputName">Name</label>
+                <input type="text" class="form-control my-3" id="inputName" placeholder="Your Name">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputEmail">Email</label>
+                <input type="email" class="form-control my-3" id="inputEmail" placeholder="Your Email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputMessage">Message</label>
+            <textarea class="form-control my-3" id="inputMessage" rows="4" placeholder="Your Message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary my-3">Send Message</button>
+    </form>
+</section> 
+
+
+{% endblock body %}

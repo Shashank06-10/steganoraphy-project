@@ -1,0 +1,111 @@
+<!-- result.html -->
+{% extends "base.html" %}
+{% load static %}
+{% block title %} 
+Result
+{% endblock title %}
+
+{% block body %} 
+<div class="shadow-lg p-3 mb-5 bg-body rounded">
+    <div class="d-flex justify-content-center">
+        <h1 class="">
+           Encrypted Result
+        </h1>
+    </div>
+    <div>
+        {% comment %} <div class=" mx-3">
+            <p>Encrypted Text: {{ ciphertext }}</p>
+        </div>
+
+        <div class=" mx-3">
+            <p>Decrypted Text: {{ plain_text }}</p>
+            <p>Decrypted Text: {{ image_path }}</p>
+        </div> {% endcomment %}
+
+        <div class="mx-3 my-3"> 
+            {% if image_path %}
+                <div class="mx-3 d-flex justify-content-center">
+                    <img src="{% static 'updated/'|add:image_path %}" alt="Image Preview" style="max-width: 100%; max-height: 400px; width: auto; height: auto;">
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="d-flex justify-content-center my-3">
+            <button type="button" class="btn btn-primary mx-3" id="download" >Download
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                    <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+                  </svg>
+            </button>
+            <button type="button" class="btn btn-primary" id="shareButton" >Share
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                    <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5"/>
+                  </svg>
+            </button>
+            <a href="/SecureEncrypt/image/enc/" class="btn btn-primary mx-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+                </svg>
+                Back
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Add this script at the end of your HTML body -->
+<script>
+    // Function to handle the download button click
+    function handleDownloadButtonClick() {
+        // Get the image path from the server
+        const image_path = "{{ image_path }}";
+
+        // If image_path exists, create a link element and trigger a click on it to download the image
+        if (image_path) {
+            const downloadLink = document.createElement('a');
+            downloadLink.href = `/static/updated/${image_path}`;
+            downloadLink.download = 'downloaded_image.png';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        } else {
+            // Provide feedback or handle the case where there is no image path
+            alert('No image available for download.');
+        }
+    }
+
+    // Add click event listener to the download button
+    const downloadButton = document.getElementById('download');
+    downloadButton.addEventListener('click', handleDownloadButtonClick);
+
+
+    async function handleShareButtonClick() {
+        // Get the image path from the server
+        const image_path = "{{ image_path }}";
+
+        // If image_path exists, use Web Share API to share the image link
+        if (image_path && navigator.share) {
+            try {
+                const shareData = {
+                    title: 'Shared Image',
+                    text: 'Check out this image!',
+                    url: window.location.origin + '/static/updated/' + image_path,
+                };
+
+                await navigator.share(shareData);
+                console.log('Image link shared successfully');
+            } catch (error) {
+                console.error('Error sharing image link:', error);
+            }
+        } else {
+            // Provide feedback or handle the case where there is no image path or Web Share API is not supported
+            alert('Image link sharing is not supported in this browser or no image available.');
+        }
+    }
+
+    // Add click event listener to the share button
+    const shareButton = document.getElementById('shareButton');
+    shareButton.addEventListener('click', handleShareButtonClick);
+</script>
+
+
+
+{% endblock body %}
